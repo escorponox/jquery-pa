@@ -1,0 +1,104 @@
+.c-users {
+  @include flex-container(column, stretch);
+  margin: $base-spacing-unit-large;
+}
+
+.c-users__user {
+  @include flex-container();
+  border: 1px solid $color-blue;
+  border-radius: $base-radius;
+  cursor: pointer;
+  margin-bottom: $base-spacing-unit;
+  padding: $base-radius $base-radius * 2;
+  width: 500px;
+
+  &:hover {
+    background-color: $color-blue-light;
+    color: $color-white;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &.is-selected {
+    background-color: $color-blue;
+    color: $color-white;
+  }
+}
+
+.c-users__id {
+  flex: 0 0 24px;
+}
+
+.c-users__name {
+  font-weight: 700;
+  margin: 0 $base-radius;
+}
+
+.c-users__email {
+  margin-left: auto;
+}
+
+#user-details-container {
+  border: 1px solid $color-blue;
+  border-radius: $base-radius;
+  display: none;
+  margin: $base-spacing-unit-large;
+  padding: $base-spacing-unit;
+  &.is-active {
+    display: block;
+  }
+}
+
+.c-user-details {
+  @include flex-container(column, stretch);
+
+}
+
+.c-user-details__key {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+
+#clear-button {
+  background-color: $color-white;
+  border: 1px solid $color-blue;
+  border-radius: $base-radius;
+  color: $color-blue;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  height: $base-spacing-unit * 2.5;
+  line-height: $base-spacing-unit * 2.5;
+  padding: 0 $base-spacing-unit;
+  text-align: center;
+  transition: color 0.15s linear, border-color 0.15s linear, background 0.15s linear;
+  &:hover {
+    background-color: $color-blue-light;
+    border-color: $color-blue-light;
+    color: $color-white;
+  }
+
+  &:active {
+    background-color: $color-blue;
+    border-color: $color-blue;
+    color: $color-white
+  }
+
+  &:disabled {
+    background: $color-disabled;
+    border-color: $color-disabled;
+    color: $color-white;
+    cursor: default;
+  }
+
+  .fa {
+    padding-right: $base-spacing-unit / 2;
+  }
+
+  user-select: none;
+
+}
