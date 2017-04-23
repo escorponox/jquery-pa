@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Methods</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:300,400,700" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <h1 class="header__title">JQuery Project Assignment 2</h1>
+</header>
+<main>
+  <div id="method-list">
+    <h2>Methods</h2>
+    <div class="c-methods">
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.after()</h3>
+        <div class="c-methods__code">
+            <pre><code class="language-javascript">$('#target-list')
+  .find('.c-target-list__item')
+  .after('&lt;li&gt;Inserted with .after()&lt;/li&gt;')</code></pre>
+        </div>
+        <button id="after-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.append()</h3>
+        <div class="c-methods__code">
+            <pre><code class="language-javascript">$('#target-list')
+  .find('.c-target-list__item').append('hi')</code></pre>
+        </div>
+        <button id="append-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.appendTo()</h3>
+        <div class="c-methods__code">
+            <pre><code class="language-javascript">$('&lt;li&gt;Inserted with .appendTo()&lt;/li&gt;')
+  .appendTo($('#target-list'))</code></pre>
+        </div>
+        <button id="appendto-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.animate()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">const initialHeight = $('#target-list').css('height')
+$('#target-list')
+  .animate({height: '100px'}, 300)
+  .animate({height: initialHeight},{
+    duration: 300,
+    complete: () => {$('#target-list').css('height', '')}
+  })</code></pre>
+        </div>
+        <button id="animate-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.before()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">('#target-list')
+  .find('.c-target-list__item')
+  .before('&lt;li&gt;Inserted with .before()&lt;/li&gt;')</code></pre>
+        </div>
+        <button id="before-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.children()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .children().remove()</code></pre>
+        </div>
+        <button id="children-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.css()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .children().css('color', 'red')</code></pre>
+        </div>
+        <button id="css-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.each()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .children().each((index, child) => child.append(index))</code></pre>
+        </div>
+        <button id="each-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.empty()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list').empty()</code></pre>
+        </div>
+        <button id="empty-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.fadeIn()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list').fadeIn()</code></pre>
+        </div>
+        <button id="fadein-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.fadeOut()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list').fadeOut()</code></pre>
+        </div>
+        <button id="fadeout-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.find()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .find('#item-5').append('found')</code></pre>
+        </div>
+        <button id="find-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.first()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .children()
+  .first().append('first')</code></pre>
+        </div>
+        <button id="first-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.hide()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .find('#item-5').hide()</code></pre>
+        </div>
+        <button id="hide-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.html()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .find('#item-5').html('new html')</code></pre>
+        </div>
+        <button id="html-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.next()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .find('#item-5')
+  .next().html('item 5 next')</code></pre>
+        </div>
+        <button id="next-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.nextAll()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .find('#item-5')
+  .nextAll().html('item 5 nextAll')</code></pre>
+        </div>
+        <button id="nextall-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.prev()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .find('#item-5')
+  .prev().html('item 5 prev')</code></pre>
+        </div>
+        <button id="prev-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.prevAll()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .find('#item-5')
+  .prevAll().html('item 5 prevAll')</code></pre>
+        </div>
+        <button id="prevall-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+      <div class="c-methods__method">
+        <h3 class="c-methods__title">.siblings()</h3>
+        <div class="c-methods__code">
+          <pre><code class="language-javascript">$('#target-list')
+  .find('#item-5')
+  .siblings().html('item 5 prevAll')</code></pre>
+        </div>
+        <button id="siblings-run" class="button c-methods__run-button">Run Method</button>
+      </div>
+    </div>
+  </div>
+  <div id="target-list-container">
+    <h2>Target List</h2>
+    <button id="reset-list" class="button">Reset List</button>
+    <ul id="target-list" class="c-target-list">
+      <li class="c-target-list__item">Item 01</li>
+      <li class="c-target-list__item">Item 02</li>
+      <li class="c-target-list__item">Item 03</li>
+      <li class="c-target-list__item">Item 04</li>
+      <li id="item-5" class="c-target-list__item">Item 05</li>
+      <li class="c-target-list__item">Item 06</li>
+      <li class="c-target-list__item">Item 07</li>
+      <li class="c-target-list__item">Item 08</li>
+      <li class="c-target-list__item">Item 09</li>
+      <li class="c-target-list__item">Item 10</li>
+    </ul>
+  </div>
+</main>
+<footer>
+  <div>Carlos Coves Prieto 2017</div>
+</footer>
+</body>
+</html>

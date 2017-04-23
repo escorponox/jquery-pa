@@ -1,0 +1,39 @@
+#method-list,
+#target-list-container {
+  //flex: 50%;
+}
+
+.c-methods {
+  margin-right: $base-spacing-unit;
+  max-height: calc(100vh - 9.5rem - (3 * #{$base-spacing-unit-large}));
+  overflow-y: auto;
+}
+
+.c-methods__method {
+  @include flex-container(column, flex-start);
+  border: 1px solid $color-blue;
+  border-radius: $base-radius;
+  margin-bottom: $base-spacing-unit;
+  padding: $base-spacing-unit;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.c-methods__title {
+  color: $color-blue-dark;
+  margin-bottom: $base-spacing-unit;
+  @include font-size(24px)
+}
+
+.c-target-list {
+  border: 1px solid $color-blue;
+  border-radius: $base-radius;
+  margin-bottom: $base-spacing-unit;
+  padding: $base-spacing-unit;
+}
+
+#reset-list {
+  margin-bottom: $base-spacing-unit;
+}

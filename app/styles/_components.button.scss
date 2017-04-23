@@ -1,0 +1,39 @@
+.button {
+  background-color: $color-white;
+  border: 1px solid $color-blue;
+  border-radius: $base-radius;
+  color: $color-blue;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  height: $base-spacing-unit * 2.5;
+  line-height: $base-spacing-unit * 2.5;
+  padding: 0 $base-spacing-unit;
+  text-align: center;
+  transition: color 0.15s linear, border-color 0.15s linear, background 0.15s linear;
+  &:hover {
+    background-color: $color-blue-light;
+    border-color: $color-blue-light;
+    color: $color-white;
+  }
+
+  &:active {
+    background-color: $color-blue;
+    border-color: $color-blue;
+    color: $color-white
+  }
+
+  &:disabled {
+    background: $color-disabled;
+    border-color: $color-disabled;
+    color: $color-white;
+    cursor: default;
+  }
+
+  .fa {
+    padding-right: $base-spacing-unit / 2;
+  }
+
+  user-select: none;
+}

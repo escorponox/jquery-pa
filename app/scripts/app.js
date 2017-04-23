@@ -1,4 +1,4 @@
-import styles from '../styles/app.scss'
+import '../styles/app.scss'
 import documentReady from './document-ready'
 
 window.jQuery = window.$ = jQuery

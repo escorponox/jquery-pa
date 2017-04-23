@@ -11,6 +11,7 @@ export default (env = {dev: true}) => {
     context: path.join(__dirname, 'app'),
     entry: {
       app: './scripts/app.js',
+      app2: './scripts/app2.js',
       vendor: ['jquery']
     },
     output: {
@@ -35,7 +36,7 @@ export default (env = {dev: true}) => {
           ]
         },
         env.dev ? {
-          test: /\.scss$/,
+          test: /\.s?css$/,
           use: [
             {
               loader: 'style-loader',
@@ -65,7 +66,7 @@ export default (env = {dev: true}) => {
             }
           ]
         } : {
-          test: /\.scss$/,
+          test: /\.s?css$/,
           exclude: /node_modules/,
           loader: ExtractTextPlugin.extract([
             {
@@ -95,8 +96,26 @@ export default (env = {dev: true}) => {
     plugins: [
       new webpack.NamedModulesPlugin(),
       new HtmlWebpackPlugin({
+        filename: 'index.html',
         template: './index.html',
         inject: 'body',
+        excludeChunks: ['app2'],
+        minify: env.prod ? {
+          removeComments: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          removeOptionalTags: true,
+          removeRedundantAttributes: true,
+          removeEmptyAttributes: true,
+          collapseWhitespace: true,
+          collapseBooleanAttributes: true,
+        } : false,
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'index2.html',
+        template: './index2.html',
+        inject: 'body',
+        excludeChunks: ['app'],
         minify: env.prod ? {
           removeComments: true,
           removeScriptTypeAttributes: true,
