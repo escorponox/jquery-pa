@@ -67,7 +67,10 @@ export default (env = {dev: true}) => {
           ]
         } : {
           test: /\.s?css$/,
-          exclude: /node_modules/,
+          include: [
+            path.resolve(__dirname, 'app/styles'),
+            path.resolve(__dirname, 'node_modules/prismjs/themes')
+          ],
           loader: ExtractTextPlugin.extract([
             {
               loader: 'css-loader',
