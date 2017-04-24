@@ -136,6 +136,10 @@ export default (env = {dev: true}) => {
         allChunks: true
       }) : undefined,
       new webpack.optimize.CommonsChunkPlugin({
+        name: 'commons',
+        chunks: ['app', 'app2']
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor'
       }),
       //with this you don't need to import jQuery all around
